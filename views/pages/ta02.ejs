@@ -16,10 +16,46 @@
       </div>
     </div>
     <div class="container">
+      <form class="user-form" action="/ta02/addUser" method="POST">
+        <div class="form-control">
+            <label for="title">User Name</label>
+            <input type="text" name="user" id="user">
+        </div>
+        <button class="btn" type="submit">Add User</button>
+      </form>
 
+      <section>
+        <% if (usrs.length > 0) { %>
+          <div class="grid">
+                <% for (let user of usrs) { %>
+                    <article class="userDisplay ">
+                        <div class="content">
+                            <h2 class="userName"> <%= user %></h2>
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>No User Found!</h1>
+        <% } %>
+      </section>
+
+      <form class="userRemove-form" action="/ta02/removeUser" method="POST">
+        <div class="form-control">
+            <label for="title">Remove User Name</label>
+            <input type="text" name="removeUser" id="removeUser">
+        </div>
+        <button class="btn" type="submit">Remove User</button>
+      </form>
+
+      <% if ( userDis == false ) { %>
+        <div>
+          <h1>User Name Not Found</h1>
+        </div>
+      <% }  %>
+        
     </div>
-
-
+    
 </body>
 
 </html>
