@@ -15,8 +15,15 @@
         <p>This is the placeholder for Team Activity 03</p>
       </div>
     </div>
-    <div class="container">
+    <div class="container row">
+      <% for (let item of items) { %>
+        <div class="list-group-item col-xs-4" style="max-height:300px;">
+          <p>Item Name: <%= item.name %></p>
+          <p>Item Price: <%= item.price %> </p>
+          <p>Item Description: <%= item.description %></p>
+        </div>
 
+      <% } %>
     </div>
 
 
